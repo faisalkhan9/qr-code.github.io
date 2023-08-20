@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff4d4d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mrs+Sheppards&family=Permanent+Marker&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!--  Scripts   -->
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.0/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!--  Scripts   -->
+
+<title>Title</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+  <nav>
+        <h4 class="dont-print">
+          <img class="qr-svg" src="/svg/qr-code.svg" alt="" /> Qr Code Generator</h4>
+  </nav>
+
+  <div class="container">
+
+    <div class="box-one do-print">
+
+  <form action="javascript:myFun()" class="form">
+        <input type="text" name="data" id="data" placeholder="Enter text or paste url" class="inputPrint" required></input>
+
+       <label for="data">
+         <button type="submit" id="genBtn"  class="dont-print">Generate QR Code</button> 
+       </label>
+
+     </form> 
+     
+      <div class="buttons">
+        <button id="printBtn" onclick="printPdf()" class="dont-print">Print Pdf</button>
+        <button id="download" onclick="download()" class="dont-print">Download Image</button>
+               <button id="refresh" >
+             <img class="refresh-svg" src="/svg/refresh.svg" alt="refresh" />  
+
+               </button>
+      </div>
+
+    </div>
+
+    <div class="box-two do-print">
+
+
+      <iframe id="frame" src=""></iframe>
+
+  
+
+    </div>
+
+  </div>
+
+
+   <footer>
+     <p>© faisal khan 2023</p>
+   </footer>
+
+  <script>
+    function myFun() {
+
+
+      let data = document.getElementById("data").value;
+      let fullPath = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=" + data;
+      let final = document.getElementById('frame').setAttribute("src", fullPath);
+  
+    }
+
+    function printPdf() {
+      window.print();
+    }
+
+    function download() {
+  alert("download image function is curently not available");
+ /*     let data = document.getElementById("data").value;
+      let fullPath = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=" + data;
+            let final = document.getElementById('frame').setAttribute("src", fullPath);
+  
+ */
+
+    }
+    
+    document.getElementById("refresh").onclick = function() {
+      window.location.reload();
+    }
+    
+  </script>
+
+
+
+</body>
+
+</html>
