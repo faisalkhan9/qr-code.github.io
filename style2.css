@@ -93,7 +93,7 @@ nav h4 .qr-svg {
     .box-two {
       /*    background:linear-gradient(to right bottom ,#fff,#2ca53f);
       */
-      background:linear-gradient(#ffffff99,#ffffff99) , url('/images/worldblock.jpeg');
+      background:linear-gradient(#ffffff99,#ffffff99) , url('worldblock.jpeg');
       
       background-size: cover;
       background-position: center;
