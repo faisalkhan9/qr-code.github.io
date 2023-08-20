@@ -173,8 +173,8 @@ background:#174731 ;
       height:42px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding-left:55px;
+      justify-content: center;
+      padding-right:55px;
       gap: 10px;
      font-family: Poppins;
       
@@ -182,7 +182,7 @@ background:#174731 ;
    #refresh {
      position: absolute;
      top:435px;
-     left:225px;
+     right:25%;
       height: 35px;
       width: 40px;
       background:  #FF4D4D ;
