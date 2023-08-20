@@ -128,7 +128,8 @@ nav h4 .qr-svg {
       width: 250px;
       font-size: 16px;
       font-weight: 600;
-   
+   font-family: Poppins;
+      
       color: var(--darker);
       border: none;
       padding-left: 10px;
@@ -155,7 +156,8 @@ nav h4 .qr-svg {
       border: 1px solid #6BB837;
       border-radius: 2px;
       font-weight: 500;
-
+font-family: Poppins;
+      
       transition: .4s;
       
     }
@@ -174,6 +176,8 @@ background:#174731 ;
       justify-content: flex-start;
       padding-left:55px;
       gap: 10px;
+     font-family: Poppins;
+      
     }
    #refresh {
      position: absolute;
