@@ -75,18 +75,8 @@
   
     }
 
-    function printPdf() {
+        function printPdf() {
       window.print();
-    }
-
-    function download() {
-  alert("download image function is curently not available");
- /*     let data = document.getElementById("data").value;
-      let fullPath = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=" + data;
-            let final = document.getElementById('frame').setAttribute("src", fullPath);
-  
- */
-
     }
     
     document.getElementById("refresh").onclick = function() {
@@ -94,6 +84,35 @@
     }
     
   </script>
+
+   <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js">
+   </script>
+   <script>
+      function download(){
+        
+     let data = document.getElementById("data").value;
+        let fullPath = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=" + data;
+
+        
+          axios({
+              url:fullPath,
+              method:'GET',
+              responseType: 'blob'
+      })
+      .then((response) => {
+             const url = window.URL
+             .createObjectURL(new Blob([response.data]));
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.setAttribute('download', 'qr-code.jpg');
+                    document.body.appendChild(link);
+                    link.click();
+      })
+      }
+       
+   </script>
+
 
 
 
