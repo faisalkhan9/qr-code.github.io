@@ -515,4 +515,7 @@ background:#174731 ;
             width:400px;
           
         }
+      nav h4 .qr-svg {
+        height:3rem;
+      }
     }
