@@ -1,4 +1,4 @@
- 
+
   :root {
     --darker:#1a1a1a;
     
@@ -19,11 +19,14 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+  html {
+      font-size:62.5%;
+  }
     body {
-      background: var(--light);
+      background:#f2f2f2;
       font-family: "Poppins", sans-serif;
       min-height: 100vh;
+      overflow-y:scroll;
       display: flex;
       flex-direction: column;
       align-items: top;
@@ -32,36 +35,126 @@
     }
 
     .container {
-      height: 450px;
+      height: 70vh;
       width: 100%;
       padding-top: ;
-      background: ;
+    /*  background:#35362820;*/
       border: none;
       border-radius: 0px;
       border: ;
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
-      justify-content: space-between;
+      justify-content:space-between;
 
 
     }
+    nav {
+        height:70px;
+        background:var(--light);
+        color:var(--darker);
+        width:100%;
+        position:sticky;
+        top:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      box-shadow:0px 5px 10px #00000010;
+       z-index: 1000;
+    }
+    
+    
+body.dark {
+background-color: var(--darker);
+color:var(--light);
 
+} 
+body.dark nav {
+    background:#0f0f0f;
+    color:white;
+}
+body.dark nav .qr-svg {
+   
+    fill:#fff;
+}
+
+body.dark #data {
+    color:var(--light);
+}
+body.dark #data::placeholder {
+    color:var(--light);
+}
+    .checky {
+    position:absolute;
+    right:3%;
+    top:25%;
+     height:20px;
+     width:55px;
+     height:35px;
+    background: ;
+    display:grid;
+    place-content:center;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: gray;
+  width: 45px;
+  height: 22px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+color: #f1c40f;
+font-size:14px;
+}
+
+.fa-sun {color: #f39c12;
+  font-size:14px;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(23px);
+}
+
+
+    
+    
     nav h4 {
       display: flex;
       flex-direction:row;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 1.8rem;
       font-weight: 700;
-      color:var(--darker);
-      background:var(--light);
+   
+     background:;
       border-radius: 0;
-      height: 80px;
-     padding-top:20px;
+     
+     
      
 
-      width: 100%;
+      
     }
 nav h4 .qr-svg {
   height:16px;
@@ -69,9 +162,9 @@ nav h4 .qr-svg {
 }
 
     .box-one {
-      border: ;
+      border:;
       width: 100%;
-      height: 150px;
+      height: 140px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -81,39 +174,54 @@ nav h4 .qr-svg {
     }
 
     .form {
-      border: ;
-    
+      border:;
+      width:280px;
       height:90px;
+      padding:2px;
       display: flex;
       flex-direction:column;
       align-items: left;
-     justify-content: space-between;
+     justify-content:space-between;
     }
 
+    .form-buttons {
+    border:;
+    width:;
+        height:40px;
+        display:flex;
+        align-items:center;
+        justify-content:flex-start;
+  
+    }
     .box-two {
       /*    background:linear-gradient(to right bottom ,#fff,#2ca53f);
       */
       background:linear-gradient(#ffffff99,#ffffff99) , url('worldblock.jpeg');
-      
+     
       background-size: cover;
       background-position: center;
       border: ;
       width: 100%;
-      height: 230px;
+      height: 200px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-     box-shadow: inset 0px 6px 20px #00000020;
+     
     }
-
+    body.dark .box-two {
+        background:linear-gradient(#00000099,#00000099) , url('worldblock.jpeg');
+     
+        background-size: cover;
+      background-position: center;
+    }
 
 
     #frame {
      
       border-radius: 5px;
       height: 160px;
-      width: 160px;
+      width: 160px; 
       background: linear-gradient(to right bottom,#56A421,#4D50FF,#FF4D4D,#FF4D4D);
       background: url('qr mobile.jpeg');
       background-size:cover;
@@ -128,21 +236,19 @@ nav h4 .qr-svg {
       width: 250px;
       font-size: 16px;
       font-weight: 600;
-   font-family: Poppins;
-      
+   
       color: var(--darker);
       border: none;
       padding-left: 10px;
       border-radius: 2px;
       background:none;
-      border-bottom: 2px dotted lightgray;
+      border-bottom: 2px dotted gray;
     }
 
     #data:focus {
       outline: 2px solid #ff4d4d;
-     border:none;
-      background: none;
-    }
+     border-bottom:none;
+         }
 ::placeholder {
   color:var(--darker);
   opacity: .75;
@@ -156,10 +262,9 @@ nav h4 .qr-svg {
       border: 1px solid #6BB837;
       border-radius: 2px;
       font-weight: 600;
-font-family: Poppins;
-      
+    font-family: Poppins;
       transition: .4s;
-      
+      margin-right:10px;
     }
 
     #genBtn:active{
@@ -169,20 +274,20 @@ background:#174731 ;
 
     .buttons {
       border:;
-      width:100%;
+      width:280px;
       height:42px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding-right:55px;
+      justify-content:flex-start ;
+      padding-left:2px;
       gap: 10px;
-     font-family: Poppins;
+      font-family: Poppins;
       
     }
    #refresh {
-     position: absolute;
-     top:435px;
-     right:25%;
+     
+   
+    
       height: 35px;
       width: 40px;
       background:  #FF4D4D ;
@@ -207,7 +312,7 @@ background:#174731 ;
    }
    
     #download {
-     
+    
       height: 30px;
       width: 110px;
       background:  #197DBF;
@@ -215,26 +320,26 @@ background:#174731 ;
       font-size:12px;
       border:1px solid #6AC4FF;
       border-radius: 2px;
-      font-weight: 500;
+     font-weight: 500;
       transition: .4s;
     }
 
     #printBtn {
       height: 30px;
       width: 70px;
-      background:#266CF1;
+      background:#197DBF;
       color:var(--light);
       font-size:12px;
-      border:1px solid #6198FF;
+      border:1px solid #6AC4FF;
       border-radius: 2px;
-      font-weight: 500;
+    font-weight: 500;
       transition: .4s;
-
+     
     }
 
     #printBtn:active, #printBtn:hover
 
-   /* , #download:active*/
+   , #download:active, #download:hover
       {
       background:#003394;
     
@@ -245,8 +350,8 @@ background:#174731 ;
         display: flex;
         transform: scale(4);
         margin-top: ;
-        padding-top: 600px;
-    
+        padding-top: 200px;
+       
       }
 
       .dont-print {
@@ -254,10 +359,14 @@ background:#174731 ;
       }
 
       .inputPrint {
-
+        
         transform: scale(.5);
         opacity:1;
-        margin-bottom: -100px
+        margin-bottom:;
+        
+      }
+      .box-two {
+        height:300px;
       }
     }
     
@@ -265,10 +374,142 @@ background:#174731 ;
     footer p {
       color:var(--darker);
       opacity: .4;
-      position: absolute;
+      position:fixed;
       bottom:10px;
-      left:39%;
-  
+      left:20px;
       font-size: 10px;
     }
-  
+  body.dark footer p {
+      color:var(--light);
+  }
+
+/* For Mobile */
+    @media only screen and (max-width:400px) {
+        body {
+          
+        }
+        .box-two {
+            height:;
+        }
+    }
+    
+/* For Tablets */
+    @media only screen and (min-width:435px) {
+        body {
+          
+        }
+        .container {
+            justify-content:;
+          
+        
+        }
+        .box-one {
+        margin-top:50px;
+            height:200px;
+        }
+        .box-two {
+            height:30vh;
+        }
+        #frame {
+            transform:scale(1.2);
+        }
+        .form {
+            height:140px;
+            width:300px;
+            justify-content:space-between;
+        
+        }
+        #data {
+            height:45px;
+            
+            width:265px;
+            font-size:2rem;
+        }
+        nav h4 {
+            font-size:2.7rem;
+        }
+        .form-buttons {
+            height:50px;
+            
+        }
+        #genBtn {
+            height:45px;
+            width:200px;
+            font-size:1.8rem;
+            margin-right:15px;
+        }
+        #refresh {
+            height:45px;
+            width:50px;
+           
+        }
+        .refresh-svg {
+            height:18px
+        }
+        .buttons {
+            gap:15px;
+            width:300px;
+           margin-top:10px;
+        }
+        #download {
+            height:35px;
+            width:130px;
+            font-size:1.5rem;
+        }
+        #printBtn {
+             height:35px;
+            width:90px;
+            font-size:1.5rem;
+        }
+        
+    }
+    
+    @media only screen and (min-height:700px) {
+        .container {
+            padding-bottom:65px
+        }
+    }
+    
+     @media only screen and (min-height:986px) {
+        .container {
+            padding-bottom:100px
+        }
+    }
+    
+    
+    /* For Latops & Desktops */
+    @media only screen and (min-width:768px) {
+        body {
+         background:#f2f2f2;
+        
+        }
+        .container {
+        height:100vh;
+            flex-direction:row;
+           padding:40px; 
+           justify-content:center;
+           
+        }
+        .box-two {
+            border:;
+            height:45vh;
+            box-shadow:none;
+            width:400px;
+        }
+     .form {
+         height:130px;
+     }
+           
+        #frame {
+            transform:scale(1.3);
+        }
+       
+        .box-one {
+        border:;
+            height:45vh;
+            margin-top:0px;
+            justify-content:flex-end;
+            width:400px;
+          
+        }
+    }
