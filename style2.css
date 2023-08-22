@@ -492,6 +492,7 @@ background:#174731 ;
         }
         .box-two {
             border:;
+          border-radius:2px;
             height:45vh;
             box-shadow:none;
             width:400px;
