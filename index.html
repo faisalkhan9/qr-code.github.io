@@ -9,20 +9,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mrs+Sheppards&family=Permanent+Marker&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!--  Scripts   -->
+  
+  
+  
   <script src="  https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.0/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!--  Scripts   -->
 
-<title>Qr Code Generator by fk</title>
-<link rel="stylesheet" href="style2.css">
+<title>Title</title>
+<link rel="stylesheet" href="style3.css">
 </head>
 
 <body>
-  <nav>
+  <nav class="dont-print">
+      <div class="checky"> <input type="checkbox" class="checkbox" id="checkbox"> <label for="checkbox" class="checkbox-label"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> <span class="ball"></span> </label> </div>
         <h4 class="dont-print">
-          <img class="qr-svg" src="qr-code.svg" alt="" /> Qr Code Generator</h4>
+          
+          <svg class="qr-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM64 96v64h64V96H64zM0 336c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V336zm64 16v64h64V352H64zM304 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48zm80 64H320v64h64V96zM256 304c0-8.8 7.2-16 16-16h64c8.8 0 16 7.2 16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s7.2-16 16-16s16 7.2 16 16v96c0 8.8-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s-7.2-16-16-16s-16 7.2-16 16v64c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V304zM368 480a16 16 0 1 1 0-32 16 16 0 1 1 0 32zm64 0a16 16 0 1 1 0-32 16 16 0 1 1 0 32z"/></svg>
+           Qr Code Generator</h4>
   </nav>
 
   <div class="container">
@@ -32,19 +40,22 @@
   <form action="javascript:myFun()" class="form">
         <input type="text" name="data" id="data" placeholder="Enter text or paste url" class="inputPrint" required></input>
 
+    <div class="form-buttons dont-print">
        <label for="data">
-         <button type="submit" id="genBtn"  class="dont-print">Generate QR Code</button> 
+         <button type="submit" id="genBtn" >Generate QR Code</button> 
        </label>
+       </form>
+        <h2 id="refresh" >
+             <img class="refresh-svg" src="/svg/refresh.svg" alt="refresh" />  
 
-     </form> 
+               </h2>
+</div>
      
-      <div class="buttons">
-        <button id="printBtn" onclick="printPdf()" class="dont-print">Print Pdf</button>
-        <button id="download" onclick="download()" class="dont-print">Download Image</button>
-               <button id="refresh" >
-             <img class="refresh-svg" src="refresh.svg" alt="refresh" />  
-
-               </button>
+     
+      <div class="buttons dont-print">
+        <button id="printBtn" onclick="printPdf()" >Print Pdf</button>
+        <button id="download" onclick="download()">Download Image</button>
+              
       </div>
 
     </div>
@@ -62,20 +73,39 @@
 
 
    <footer class="dont-print">
-   <p>© faisal khan 2023</p>
+     <p>© faisal khan 2023</p>
    </footer>
 
   <script>
+    
+    let checky = JSON.parse(localStorage.getItem("checky"))
+    
+    if (checky == true) {
+      document.body.setAttribute("class", "dark");
+      document.querySelector(".checkbox").checked = true;
+    }
+   
+      
+    
+    
+      const checkbox =document.getElementById("checkbox"); checkbox.addEventListener("change", () => { 
+        document.body.classList.toggle("dark");
+  let mode = document.body.classList.contains("dark") ;
+  console.log(mode);
+  localStorage.setItem("checky",JSON.stringify(mode));
+   })
+   
+   </script>
+   <script>
     function myFun() {
-
 
       let data = document.getElementById("data").value;
       let fullPath = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=" + data;
-      let final = document.getElementById('frame').setAttribute("src", fullPath);
+      let final =document.getElementById('frame').setAttribute("src", fullPath);
   
     }
 
-        function printPdf() {
+    function printPdf() {
       window.print();
     }
     
@@ -112,7 +142,6 @@
       }
        
    </script>
-
 
 
 
