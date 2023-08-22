@@ -263,12 +263,12 @@ nav h4 .qr-svg {
       border-radius: 2px;
       font-weight: 600;
     font-family: Poppins;
-      transition: .4s;
+    
       margin-right:10px;
     }
 
     #genBtn:active{
-    /*  transform: scale(.8); */
+  
 background:#174731 ;
     }
 
@@ -296,7 +296,7 @@ background:#174731 ;
       border:1px solid #FF8787;
       border-radius: 2px;
       font-weight: 500;
-      transition:;
+    
       display: grid;
       place-content: center;
    }
@@ -321,7 +321,7 @@ background:#174731 ;
       border:1px solid #6AC4FF;
       border-radius: 2px;
      font-weight: 500;
-      transition: .4s;
+    
     }
 
     #printBtn {
@@ -333,7 +333,7 @@ background:#174731 ;
       border:1px solid #6AC4FF;
       border-radius: 2px;
     font-weight: 500;
-      transition: .4s;
+    
      
     }
 
