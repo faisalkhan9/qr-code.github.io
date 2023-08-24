@@ -157,31 +157,32 @@ font-size:14px;
       
     }
 nav h4 .qr-svg {
-  height:15px;
+  height:16px;
   margin-right: 6px;
 }
 
     .box-one {
       border:;
       width: 100%;
-      height: 140px;
+      height: 220px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-
+      margin-top: 50px;
 
     }
 
     .form {
       border:;
       width:280px;
-      height:90px;
+      height:140px;
       padding:2px;
       display: flex;
       flex-direction:column;
       align-items: left;
      justify-content:space-between;
+    
     }
 
     .form-buttons {
@@ -191,8 +192,30 @@ nav h4 .qr-svg {
         display:flex;
         align-items:center;
         justify-content:flex-start;
-  
+    
     }
+    #qr-color {
+      height:30px;
+      width:90px;
+      margin-bottom: 5px;
+      text-align: center;
+      background: #fff;
+      border:1px solid lightgrey;
+      border-radius:2px;
+      font-weight:400;
+      font-family: Poppins;
+      font-size: 14px;
+    }
+    #qr-color:focus {
+        outline: 2px solid #56a421;
+      
+    }
+    body.dark #qr-color {
+        background:transparent;
+        color:#fff;
+        border:1px solid grey;
+    }
+    
     .box-two {
       /*    background:linear-gradient(to right bottom ,#fff,#2ca53f);
       */
@@ -210,7 +233,7 @@ nav h4 .qr-svg {
      
     }
     body.dark .box-two {
-        background:linear-gradient(#00000099,#00000099) , url('worldblock.jpeg');
+        background:linear-gradient(#00000099,#00000099) , url(worldblock.jpeg');
      
         background-size: cover;
       background-position: center;
@@ -243,6 +266,7 @@ nav h4 .qr-svg {
       border-radius: 2px;
       background:none;
       border-bottom: 2px dotted gray;
+      margin-bottom: 15px;
     }
 
     #data:focus {
@@ -263,12 +287,12 @@ nav h4 .qr-svg {
       border-radius: 2px;
       font-weight: 600;
     font-family: Poppins;
-    
+      transition: .4s;
       margin-right:10px;
     }
 
     #genBtn:active{
-  
+    /*  transform: scale(.8); */
 background:#174731 ;
     }
 
@@ -286,7 +310,7 @@ background:#174731 ;
     }
    #refresh {
      
-   
+  
     
       height: 35px;
       width: 40px;
@@ -296,7 +320,7 @@ background:#174731 ;
       border:1px solid #FF8787;
       border-radius: 2px;
       font-weight: 500;
-    
+      transition:;
       display: grid;
       place-content: center;
    }
@@ -321,7 +345,7 @@ background:#174731 ;
       border:1px solid #6AC4FF;
       border-radius: 2px;
      font-weight: 500;
-    
+      transition: .4s;
     }
 
     #printBtn {
@@ -333,7 +357,7 @@ background:#174731 ;
       border:1px solid #6AC4FF;
       border-radius: 2px;
     font-weight: 500;
-    
+      transition: .4s;
      
     }
 
@@ -389,7 +413,7 @@ background:#174731 ;
           
         }
         .box-two {
-            height:;
+           
         }
     }
     
@@ -406,15 +430,18 @@ background:#174731 ;
         .box-one {
         margin-top:50px;
             height:200px;
+            border:;
+            
         }
         .box-two {
             height:30vh;
+            
         }
         #frame {
             transform:scale(1.2);
         }
         .form {
-            height:140px;
+            height:150px;
             width:300px;
             justify-content:space-between;
         
@@ -428,20 +455,22 @@ background:#174731 ;
         nav h4 {
             font-size:2.7rem;
         }
-    nav h4 .qr-svg {
-        height:2rem;
-    }  .form-buttons {
+        .form-buttons {
             height:50px;
             
         }
         #genBtn {
-            height:45px;
+            height:40px;
             width:200px;
             font-size:1.8rem;
             margin-right:15px;
         }
+        #qr-color {
+            height:40px;
+            font-size:1.5rem;
+        }
         #refresh {
-            height:45px;
+            height:40px;
             width:50px;
            
         }
@@ -454,12 +483,12 @@ background:#174731 ;
            margin-top:10px;
         }
         #download {
-            height:35px;
+            height:30px;
             width:130px;
             font-size:1.5rem;
         }
         #printBtn {
-             height:35px;
+             height:30px;
             width:90px;
             font-size:1.5rem;
         }
@@ -494,13 +523,13 @@ background:#174731 ;
         }
         .box-two {
             border:;
-          border-radius:2px;
             height:45vh;
             box-shadow:none;
             width:400px;
         }
      .form {
-         height:130px;
+         height:200px;
+         justify-content: space-evenly;
      }
            
         #frame {
@@ -515,7 +544,4 @@ background:#174731 ;
             width:400px;
           
         }
-      nav h4 .qr-svg {
-        height:2.2rem;
-      }
     }
