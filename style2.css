@@ -232,13 +232,12 @@ nav h4 .qr-svg {
       justify-content: center;
      
     }
-    body.dark .box-two {
-        background:linear-gradient(#00000099,#00000099) , url(worldblock.jpeg');
+ body.dark .box-two {
+        background:linear-gradient(#00000099,#00000099) , url('worldblock.jpeg');
      
         background-size: cover;
       background-position: center;
     }
-
 
     #frame {
      
