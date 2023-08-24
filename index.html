@@ -20,8 +20,9 @@
 
   <!--  Scripts   -->
 
-<title>Title</title>
+<title>Qr Code Generator by Faisal Khan</title>
 <link rel="stylesheet" href="style2.css">
+
 </head>
 
 <body>
@@ -39,19 +40,34 @@
 
   <form action="javascript:myFun()" class="form">
         <input type="text" name="data" id="data" placeholder="Enter text or paste url" class="inputPrint" required></input>
+     <select name="Color" id="qr-color">
+       <option value="000000">Black</option>
+       <option value="00c113">Green</option>
+            <option value="84AC2B">Yellow Green</option>
+                 <option value="FF8800">Orange</option>
+                      <option value="FF4900">Orange Red</option>
+       <option value="FF1414">Red</option>
 
+       <option value="003394">Blue</option>
+
+       <option value="4300AA">Purple</option>
+       <option value="FF0073">Pink</option>
+              <option value="FF4D4D">Light Red</option>
+                     <option value="00588D">Navy Blue</option>
+                          <option value="00c4c4">Sky Blue</option>
+     </select>
     <div class="form-buttons dont-print">
        <label for="data">
          <button type="submit" id="genBtn" >Generate QR Code</button> 
        </label>
-       </form>
+
         <h2 id="refresh" >
              <img class="refresh-svg" src="refresh.svg" alt="refresh" />  
 
                </h2>
 </div>
-     
-     
+
+            </form>
       <div class="buttons dont-print">
         <button id="printBtn" onclick="printPdf()" >Print Pdf</button>
         <button id="download" onclick="download()">Download Image</button>
@@ -98,9 +114,13 @@
    </script>
    <script>
     function myFun() {
-
+     let qr_Color = document.getElementById("qr-color").value;
+     console.log(qr_Color);
+     
+     
+     
       let data = document.getElementById("data").value;
-      let fullPath = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=" + data;
+      let fullPath = "https://api.qrserver.com/v1/create-qr-code/?size=140x140&color=" + qr_Color +"&bgcolor=fff&data=" + data;
       let final =document.getElementById('frame').setAttribute("src", fullPath);
   
     }
@@ -121,8 +141,10 @@
    <script>
       function download(){
         
-     let data = document.getElementById("data").value;
-        let fullPath = "https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=" + data;
+      let qr_Color = document.getElementById("qr-color").value;
+     console.log(qr_Color);  
+      let data = document.getElementById("data").value;
+      let fullPath = "https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&color=" + qr_Color +"&bgcolor=fff&data=" + data;
 
         
           axios({
